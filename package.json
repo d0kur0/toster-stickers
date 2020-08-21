@@ -1,0 +1,34 @@
+{
+  "name": "toster-stickers",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build-stickers": "tsc stickerPacks/buildPacks.ts && node stickerPacks/buildPacks.js && del stickerPacks/buildPacks.js",
+    "build": "npm run build-stickers && rollup -c",
+    "dev": "npm run build-stickers && rollup -c -w",
+    "start": "sirv public",
+    "validate": "svelte-check"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@rollup/plugin-typescript": "^4.0.0",
+    "@tsconfig/svelte": "^1.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^6.0.0",
+    "svelte": "^3.0.0",
+    "svelte-check": "^1.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "postcss": "^7.0.32",
+    "postcss-import": "^12.0.1",
+    "postcss-load-config": "^2.1.0",
+    "sirv-cli": "^1.0.0",
+    "svelte-icons": "^2.1.0"
+  }
+}

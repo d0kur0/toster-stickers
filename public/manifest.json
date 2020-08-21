@@ -1,0 +1,14 @@
+{
+  "name": "Toster Stickers",
+  "version": "1.0",
+  "description": "Extension for add sticker panel on toster.ru (qna.habr.ru)",
+  "manifest_version": 2,
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://qna.habr.com/*"],
+      "js": ["./build/bundle.js"],
+      "css": ["./build/bundle.css"]
+    }
+  ]
+}

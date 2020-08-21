@@ -1,0 +1,21 @@
+.injected-button {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: none;
+  border-right: 1px solid #d6dcde;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.injected-button svg {
+  width: 18px;
+  height: 18px;
+  fill: #4f6173;
+}
+
+.injected-button:hover svg {
+  fill: #2d83e8;
+}
