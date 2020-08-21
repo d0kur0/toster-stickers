@@ -30,13 +30,12 @@ import { StickersCollection } from "./src/types/stickersCollection";
     return console.log(chalk.red("repository.url key not found in package.json"));
   }
 
-  const stickerPacksPath = path.join(process.cwd(), "stickerPacks");
+  const stickerPacksPath = path.join(process.cwd(), "stickerPacks/sources");
   const itemsInFolder = await fs.promises.readdir(stickerPacksPath);
 
   const packs: StickersCollection = [];
   const allowedExtensions = [".jpg", ".jpeg", ".svg", ".png", ".webp"];
 
-  // Each all folders in ./stickerPacks, exclude empty.
   for await (const folder of itemsInFolder) {
     const folderPath = path.join(stickerPacksPath, folder);
     const stat = await fs.promises.stat(folderPath);
@@ -45,8 +44,7 @@ import { StickersCollection } from "./src/types/stickersCollection";
     const filesInDir = await fs.promises.readdir(folderPath);
     if (!filesInDir.length) continue;
 
-    // Is not exists current folder in public/build means it's new sticker pack
-    const folderPathInBuild = path.join("public/build/stickers", folder);
+    const folderPathInBuild = path.join("stickerPacks/processed", folder);
     const isNewPack = await fs.promises.access(folderPathInBuild).then(
       () => false,
       () => true,
@@ -65,8 +63,6 @@ import { StickersCollection } from "./src/types/stickersCollection";
 
       if (!stat.isFile()) continue;
       if (!allowedExtensions.includes(path.extname(filePath))) continue;
-
-      // Resize images and copy to public/build path for new packs
       if (isNewPack) {
         await sharp(filePath)
           .resize(150)
@@ -97,6 +93,4 @@ import { StickersCollection } from "./src/types/stickersCollection";
 
   accessForBuildDir || (await fs.promises.mkdir(buildPath));
   await fs.promises.writeFile(path.join(buildPath, "packs.json"), JSON.stringify(packs), "utf-8");
-
-  console.log(packs);
 })();
