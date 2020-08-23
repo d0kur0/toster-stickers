@@ -76,7 +76,7 @@ import { StickersCollection } from "./src/types/stickersCollection";
           });
       }
 
-      images.push(`${repositoryURL}/blob/master/public/build/stickers/${folder}/${file}?raw=true`);
+      images.push(`${repositoryURL}/blob/master/stickerPacks/processed/${folder}/${file}?raw=true`);
     }
 
     packs.push({
