@@ -11,6 +11,7 @@
 }
 
 .injected-button svg {
+  pointer-events: none;
   width: 18px;
   height: 18px;
   fill: #4f6173;

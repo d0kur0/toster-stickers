@@ -9,7 +9,6 @@ const createRootStore = () => {
   const packsURL = getURL ? getURL("build/packs.json") : "/build/packs.json";
 
   const defaultStore: GlobalStoreStruct = {
-    activeForm: undefined,
     packs: [],
   };
 
@@ -20,7 +19,11 @@ const createRootStore = () => {
   });
 
   return {
+    set,
     subscribe,
+    setTextarea(activeTextarea: HTMLTextAreaElement) {
+      update(store => ({ ...store, activeTextarea }));
+    },
   };
 };
 
@@ -29,12 +32,20 @@ const createPanelStore = () => {
   const { subscribe, set, update } = writable(defaultStore);
 
   return {
+    set,
     subscribe,
     openPanel() {
       update(state => ({ ...state, isOpen: true }));
     },
     closePanel() {
+      console.log("close");
       update(state => ({ ...state, isOpen: false }));
+    },
+    selectPack(selectedPack) {
+      update(state => ({ ...state, selectedPack }));
+    },
+    setOffsets({ topOffset, leftOffset }) {
+      update(state => ({ ...state, leftOffset, topOffset }));
     },
   };
 };

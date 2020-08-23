@@ -1,7 +1,6 @@
 import App from "./App.svelte";
 import StickerPanel from "./StickerPanel.svelte";
 
-// Inject buttons in panels
 const forms = document.querySelectorAll(".form_answer, .form_comments");
 forms.forEach(form => {
   const panel = form.querySelector(".icons-bar");
@@ -9,8 +8,8 @@ forms.forEach(form => {
     return;
   }
 
-  panel.innerHTML += `<li class="sticker-panel"></li>`;
-  const target = panel.querySelector(".sticker-panel");
+  panel.innerHTML += `<li class="sticker-button-container"></li>`;
+  const target = panel.querySelector(".sticker-button-container");
 
   target &&
     new App({
@@ -19,7 +18,6 @@ forms.forEach(form => {
     });
 });
 
-// Inject sticker panel to body
 const stickerPanelContainer = document.createElement("div");
 stickerPanelContainer.setAttribute("id", "sticker-panel-container");
 document.body.appendChild(stickerPanelContainer);
