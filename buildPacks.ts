@@ -9,6 +9,9 @@ import { StickersCollection } from "./src/types/stickersCollection";
  * Make json list of packs and resize images
  * */
 
+const imagesSize = 250;
+const allowedExtensions = [".jpg", ".jpeg", ".svg", ".png", ".webp"];
+
 (async () => {
   // Parse package.json for extract repository address
   const packageDotJsonPath = path.join(process.cwd(), "package.json");
@@ -34,7 +37,6 @@ import { StickersCollection } from "./src/types/stickersCollection";
   const itemsInFolder = await fs.promises.readdir(stickerPacksPath);
 
   const packs: StickersCollection = [];
-  const allowedExtensions = [".jpg", ".jpeg", ".svg", ".png", ".webp"];
 
   for await (const folder of itemsInFolder) {
     const folderPath = path.join(stickerPacksPath, folder);
@@ -65,7 +67,7 @@ import { StickersCollection } from "./src/types/stickersCollection";
       if (!allowedExtensions.includes(path.extname(filePath))) continue;
       if (isNewPack) {
         await sharp(filePath)
-          .resize(150)
+          .resize(imagesSize)
           .toBuffer()
           .then(
             async data =>
