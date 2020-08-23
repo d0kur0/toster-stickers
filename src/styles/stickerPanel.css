@@ -19,16 +19,18 @@
 
 .sticker-panel__list-item {
   display: flex;
+  margin-top: 5px;
   align-items: center;
   justify-content: center;
 }
 
 .sticker-panel__list-item img {
   max-width: 100%;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   object-fit: cover;
   border-radius: 50%;
+  transition: 0.3s;
 }
 
 .sticker-panel__list-item button {
@@ -36,6 +38,7 @@
   background-color: transparent;
   cursor: pointer;
   position: relative;
+  outline: none;
 }
 
 .sticker-panel__list button::after {
@@ -45,7 +48,7 @@
   position: absolute;
   top: 50%;
   right: -75px;
-  content: "ElRisitas";
+  content: attr(data-name);
   transform: translateY(-50%);
   background-color: #424b5f;
   color: #d0d0d0;
@@ -55,4 +58,8 @@
 .sticker-panel__list button:hover::after {
   opacity: 1;
   pointer-events: unset;
+}
+
+.sticker-panel__list-item:hover img {
+  border-radius: 30%;
 }

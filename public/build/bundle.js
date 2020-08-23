@@ -883,12 +883,14 @@
     	return child_ctx;
     }
 
-    // (67:6) {#each $rootStore.packs as pack}
+    // (74:6) {#each $rootStore.packs as pack}
     function create_each_block(ctx) {
     	let li;
     	let button;
     	let img;
     	let img_src_value;
+    	let img_alt_value;
+    	let button_data_name_value;
     	let t;
 
     	const block = {
@@ -898,12 +900,14 @@
     			img = element("img");
     			t = space();
     			if (img.src !== (img_src_value = /*pack*/ ctx[1].images[0])) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "class", "svelte-zbib4z");
-    			add_location(img, file$2, 69, 12, 1297);
-    			attr_dev(button, "class", "svelte-zbib4z");
-    			add_location(button, file$2, 68, 10, 1276);
-    			attr_dev(li, "class", "sticker-panel__list-item svelte-zbib4z");
-    			add_location(li, file$2, 67, 8, 1228);
+    			attr_dev(img, "alt", img_alt_value = /*pack*/ ctx[1].name);
+    			attr_dev(img, "class", "svelte-1m7jcmv");
+    			add_location(img, file$2, 76, 12, 1442);
+    			attr_dev(button, "data-name", button_data_name_value = /*pack*/ ctx[1].name);
+    			attr_dev(button, "class", "svelte-1m7jcmv");
+    			add_location(button, file$2, 75, 10, 1399);
+    			attr_dev(li, "class", "sticker-panel__list-item svelte-1m7jcmv");
+    			add_location(li, file$2, 74, 8, 1351);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -915,6 +919,14 @@
     			if (dirty & /*$rootStore*/ 1 && img.src !== (img_src_value = /*pack*/ ctx[1].images[0])) {
     				attr_dev(img, "src", img_src_value);
     			}
+
+    			if (dirty & /*$rootStore*/ 1 && img_alt_value !== (img_alt_value = /*pack*/ ctx[1].name)) {
+    				attr_dev(img, "alt", img_alt_value);
+    			}
+
+    			if (dirty & /*$rootStore*/ 1 && button_data_name_value !== (button_data_name_value = /*pack*/ ctx[1].name)) {
+    				attr_dev(button, "data-name", button_data_name_value);
+    			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(li);
@@ -925,7 +937,7 @@
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(67:6) {#each $rootStore.packs as pack}",
+    		source: "(74:6) {#each $rootStore.packs as pack}",
     		ctx
     	});
 
@@ -952,10 +964,10 @@
     				each_blocks[i].c();
     			}
 
-    			attr_dev(ul, "class", "sticker-panel__list svelte-zbib4z");
-    			add_location(ul, file$2, 65, 4, 1148);
-    			attr_dev(div, "class", "sticker-panel svelte-zbib4z");
-    			add_location(div, file$2, 64, 2, 1116);
+    			attr_dev(ul, "class", "sticker-panel__list svelte-1m7jcmv");
+    			add_location(ul, file$2, 72, 4, 1271);
+    			attr_dev(div, "class", "sticker-panel svelte-1m7jcmv");
+    			add_location(div, file$2, 71, 2, 1239);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
