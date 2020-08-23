@@ -38,7 +38,6 @@ const createPanelStore = () => {
       update(state => ({ ...state, isOpen: true }));
     },
     closePanel() {
-      console.log("close");
       update(state => ({ ...state, isOpen: false }));
     },
     selectPack(selectedPack) {
