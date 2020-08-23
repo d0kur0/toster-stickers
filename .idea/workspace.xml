@@ -20,40 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d4264a5-509b-4206-8032-db06852091e9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buildPacks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/buildPacks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/build/stickers/elRisitas/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rollup.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/rollup.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/build/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/build/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/19.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/19.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/20.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/20.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/21.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/21.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickerPacks/elRisitas/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickerPacks/sources/elRisitas/9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +53,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,css,html}" />
+    <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,css,html,svelte}" />
     <property name="prettier.import.notification.dismissed" value="true" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.prettier.on.save" value="true" />
@@ -101,19 +77,17 @@
       <option name="presentableId" value="Default" />
       <updated>1598012576179</updated>
       <workItem from="1598012577240" duration="6586000" />
-      <workItem from="1598019404293" duration="17878000" />
+      <workItem from="1598019404293" duration="18655000" />
+      <workItem from="1598045910651" duration="2556000" />
+      <workItem from="1598078957980" duration="1528000" />
+      <workItem from="1598096722075" duration="1488000" />
+      <workItem from="1598098712090" duration="3279000" />
+      <workItem from="1598189777977" duration="1463000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/src/types/stickersCollection.js" />
-        <option value="$PROJECT_DIR$/src/types/stickersCollection.js" />
-        <option value="$PROJECT_DIR$/src/types/stickersCollection.js" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -132,9 +106,14 @@
       <screen x="44" y="24" width="1876" height="1056" />
     </state>
     <state x="716" y="299" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/44.24.1876.1056@44.24.1876.1056" timestamp="1598038962009" />
-    <state x="472" y="186" key="SettingsEditor" timestamp="1598020675549">
-      <screen x="44" y="24" width="1876" height="1056" />
+    <state x="438" y="186" key="SettingsEditor" timestamp="1598045846628">
+      <screen x="0" y="24" width="1920" height="1056" />
     </state>
+    <state x="438" y="186" key="SettingsEditor/0.24.1920.1056@0.24.1920.1056" timestamp="1598045846628" />
     <state x="472" y="186" key="SettingsEditor/44.24.1876.1056@44.24.1876.1056" timestamp="1598020675549" />
+    <state x="640" y="258" width="672" height="678" key="search.everywhere.popup" timestamp="1598084982072">
+      <screen x="35" y="24" width="1885" height="1056" />
+    </state>
+    <state x="640" y="258" width="672" height="678" key="search.everywhere.popup/35.24.1885.1056@35.24.1885.1056" timestamp="1598084982072" />
   </component>
 </project>
