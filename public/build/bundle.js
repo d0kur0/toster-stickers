@@ -870,8 +870,8 @@
                 .then(packs => set(Object.assign(Object.assign({}, defaultStore), { packs })));
         });
         return {
-            subscribe,
             set,
+            subscribe,
             setTextarea(activeTextarea) {
                 update(store => (Object.assign(Object.assign({}, store), { activeTextarea })));
             },
@@ -887,7 +887,6 @@
                 update(state => (Object.assign(Object.assign({}, state), { isOpen: true })));
             },
             closePanel() {
-                console.log("close");
                 update(state => (Object.assign(Object.assign({}, state), { isOpen: false })));
             },
             selectPack(selectedPack) {
