@@ -1,0 +1,18 @@
+.sticker-panel {
+  background-color: #4f5a6e;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 2px #6b768a;
+  width: 450px;
+  height: 300px;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+
+.sticker-panel__list {
+  background-color: #424b5f;
+  list-style: none;
+  padding: 0;
+  width: 50px;
+  height: 100%;
+}
