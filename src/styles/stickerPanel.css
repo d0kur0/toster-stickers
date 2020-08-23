@@ -12,7 +12,47 @@
 .sticker-panel__list {
   background-color: #424b5f;
   list-style: none;
-  padding: 0;
+  padding: 10px 0;
   width: 50px;
   height: 100%;
+}
+
+.sticker-panel__list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sticker-panel__list-item img {
+  max-width: 100%;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.sticker-panel__list-item button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.sticker-panel__list button::after {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+  position: absolute;
+  top: 50%;
+  right: -75px;
+  content: "ElRisitas";
+  transform: translateY(-50%);
+  background-color: #424b5f;
+  color: #d0d0d0;
+  padding: 4px 8px;
+}
+
+.sticker-panel__list button:hover::after {
+  opacity: 1;
+  pointer-events: unset;
 }

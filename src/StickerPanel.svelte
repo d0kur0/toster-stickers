@@ -11,7 +11,9 @@
     <ul class="sticker-panel__list">
       {#each $rootStore.packs as pack}
         <li class="sticker-panel__list-item">
-          <img src={pack.images[0]} />
+          <button>
+            <img src={pack.images[0]} />
+          </button>
         </li>
       {/each}
     </ul>
