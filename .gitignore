@@ -1,5 +1,6 @@
 /node_modules/
 buildPacks.js
 public/build
+.idea
 
 .DS_Store
