@@ -33,6 +33,7 @@
   width: 50px;
   height: 100%;
   border-radius: 5px 0 0 5px;
+  overflow-y: scroll;
 }
 
 .sticker-panel__list-item {
@@ -54,30 +55,8 @@
 .sticker-panel__list-item button {
   border: none;
   cursor: pointer;
-  position: relative;
   outline: none;
   background-color: transparent;
-}
-
-.sticker-panel__list button::after {
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.4s;
-  position: absolute;
-  top: 50%;
-  left: 45px;
-  content: attr(data-name);
-  transform: translateY(-50%);
-  background-color: #2a2f3b;
-  color: #d0d0d0;
-  padding: 4px 8px;
-  border-radius: 0 8px 8px 0;
-}
-
-.sticker-panel__list button:hover::after,
-.sticker-panel__list button:focus::after {
-  opacity: 1;
-  pointer-events: unset;
 }
 
 .sticker-panel__list button:hover,
@@ -98,11 +77,20 @@
 
 .sticker-panel__pack {
   flex: 1 1 0;
-  padding: 15px 8px;
+  padding: 0 8px;
   overflow-y: scroll;
 }
 
+.sticker-panel__pack-name {
+  padding: 10px 13px;
+  font-size: 0.8em;
+  color: #888faa;
+  font-family: sans-serif;
+  margin: 0;
+}
+
 .sticker-panel__pack-list {
+  margin: 0;
   display: flex;
   list-style: none;
   flex-wrap: wrap;
@@ -136,35 +124,36 @@
   background-color: #3e4657;
   border-radius: 5px;
   width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
-.sticker-panel__pack::-webkit-scrollbar {
+.sticker-panel ::-webkit-scrollbar {
   width: 5px;
-  height: 3px;
 }
 
-.sticker-panel__pack::-webkit-scrollbar-button {
+.sticker-panel ::-webkit-scrollbar-button {
   display: none;
 }
 
-.sticker-panel__pack::-webkit-scrollbar-track {
+.sticker-panel ::-webkit-scrollbar-track {
   background-color: #999;
 }
 
-.sticker-panel__pack::-webkit-scrollbar-track-piece {
+.sticker-panel ::-webkit-scrollbar-track-piece {
   background-color: #434c5d;
 }
 
-.sticker-panel__pack::-webkit-scrollbar-thumb {
+.sticker-panel ::-webkit-scrollbar-thumb {
   height: 30px;
   background-color: #2a2f3b;
   border-radius: 5px;
 }
 
-.sticker-panel__pack::-webkit-scrollbar-corner {
+.sticker-panel ::-webkit-scrollbar-corner {
   background-color: #999;
 }
 
-.sticker-panel__pack::-webkit-resizer {
+.sticker-panel ::-webkit-resizer {
   background-color: #2a2f3b;
 }
