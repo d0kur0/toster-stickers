@@ -9,7 +9,7 @@ import { StickersCollection } from "./src/types/stickersCollection";
  * Make json list of packs and resize images
  * */
 
-const imagesSize = 250;
+const imagesSize = 350;
 const allowedExtensions = [".jpg", ".jpeg", ".svg", ".png", ".webp"];
 
 (async () => {
