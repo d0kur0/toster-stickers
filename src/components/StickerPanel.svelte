@@ -1,9 +1,9 @@
 <script>
-  import { panelStore, rootStore } from "../globalStores";
+  import { panelStore, rootStore, lastUsedStickersStore } from "../globalStores";
   import FaRegClock from "svelte-icons/fa/FaRegClock.svelte";
+  import PackList from "./PackList.svelte";
 
   let selectedPack;
-  const MAX_USED_LIMIT = 12;
 
   $: selectedPack = $rootStore.packs
     .filter(({ name }) => name === $panelStore.selectedPack)
@@ -20,17 +20,10 @@
   const handleBodyClick = ({ target }) => {
     if (!target.closest(".sticker-panel, .injected-button")) panelStore.closePanel();
   };
-
-  const handleBodyScroll = () => panelStore.closePanel();
-
-  const handleSelectSticker = image => {
-    $rootStore.activeTextarea.value += `\n<img src="${image}" />\n`;
-    panelStore.closePanel();
-  };
 </script>
 
 <template>
-  <svelte:body on:scroll={handleBodyScroll} on:click={handleBodyClick} />
+  <svelte:body on:click={handleBodyClick} />
 
   <div
     class="sticker-panel"
@@ -40,7 +33,7 @@
   >
     <ul class="sticker-panel__list">
       <li class="sticker-panel__list-item">
-        <button class="sticker-panel__last-used" data-name="Недавние">
+        <button on:click={panelStore.clearSelectPack} class="sticker-panel__last-used" data-name="Недавние">
           <FaRegClock />
         </button>
       </li>
@@ -56,15 +49,11 @@
 
     <div class="sticker-panel__pack">
       {#if $panelStore.selectedPack}
-        <ul class="sticker-panel__pack-list">
-          {#each selectedPack.images as image}
-            <li class="sticker-panel__pack-list-item">
-              <button on:click={() => handleSelectSticker(image)}>
-                <img src={image} alt="Sticker" />
-              </button>
-            </li>
-          {/each}
-        </ul>
+        <h4 class="sticker-panel__pack-name">{$panelStore.selectedPack}</h4>
+        <PackList images={selectedPack.images} />
+      {:else}
+        <h4 class="sticker-panel__pack-name">Последнее использованное</h4>
+        <PackList images={$lastUsedStickersStore} />
       {/if}
     </div>
   </div>
