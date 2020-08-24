@@ -1,8 +1,9 @@
 <script>
-  import { panelStore, rootStore } from "./globalStores";
+  import { panelStore, rootStore } from "../globalStores";
   import FaRegClock from "svelte-icons/fa/FaRegClock.svelte";
 
   let selectedPack;
+  const MAX_USED_LIMIT = 12;
 
   $: selectedPack = $rootStore.packs
     .filter(({ name }) => name === $panelStore.selectedPack)
@@ -46,7 +47,7 @@
 
       {#each $rootStore.packs as pack}
         <li class="sticker-panel__list-item">
-          <button data-name={pack.name} on:click={() => handleSelectPack(pack.name)}>
+          <button on:click={() => handleSelectPack(pack.name)}>
             <img src={pack.images[0]} alt={pack.name} />
           </button>
         </li>

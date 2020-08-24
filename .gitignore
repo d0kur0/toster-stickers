@@ -1,4 +1,5 @@
 /node_modules/
 buildPacks.js
+public/build
 
 .DS_Store
