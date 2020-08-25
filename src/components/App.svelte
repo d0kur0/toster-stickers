@@ -9,7 +9,7 @@
     const rects = target.getBoundingClientRect();
 
     const textarea: HTMLTextAreaElement = target?.parentElement?.parentElement?.parentElement?.parentElement?.querySelector(
-      "textarea.field__input",
+      "textarea",
     );
 
     rootStore.setTextarea(textarea);
