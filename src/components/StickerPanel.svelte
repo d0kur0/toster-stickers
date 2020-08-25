@@ -23,8 +23,8 @@
   };
 
   const handleImageLoad = ({ target }) => {
-    target?.parentNode.classList.remove("sticker-panel__button-loading", "sticker-panel__button-loading--mini");
-    target?.parentNode.removeAttribute("disabled");
+    target.parentNode.classList.remove("sticker-panel__button-loading", "sticker-panel__button-loading--mini");
+    target.parentNode.removeAttribute("disabled");
   };
 </script>
 

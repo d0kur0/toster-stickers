@@ -26,7 +26,7 @@
 
   const handlePaste = event => {
     const items = event.clipboardData.items;
-    const image = [...items].filter(item => item.type.includes("image"))?.[0];
+    const image = [...items].filter(item => item.type.includes("image")).shift();
     if (!image) return;
 
     const formData = new FormData();
@@ -41,8 +41,8 @@
     })
       .then(response => response.json())
       .then(response => {
-        if (response?.files.length) {
-          const files = response?.files.map(file => `<img src="${file.url}" />`);
+        if (response.files.length) {
+          const files = response.files.map(file => `<img src="${file.url}" />`);
           event.target.value += `\n${files.join("\n")}\n`;
           enableButtons();
           hideLoading(event.target);
