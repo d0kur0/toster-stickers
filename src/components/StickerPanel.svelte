@@ -2,6 +2,7 @@
   import { panelStore, rootStore, lastUsedStickersStore } from "../globalStores";
   import FaRegClock from "svelte-icons/fa/FaRegClock.svelte";
   import PackList from "./PackList.svelte";
+  import { enableButtons } from "../utils/enableButtons";
 
   let selectedPack;
 
@@ -19,6 +20,11 @@
 
   const handleBodyClick = ({ target }) => {
     if (!target.closest(".sticker-panel, .injected-button")) panelStore.closePanel();
+  };
+
+  const handleImageLoad = ({ target }) => {
+    target?.parentNode.classList.remove("sticker-panel__button-loading", "sticker-panel__button-loading--mini");
+    target?.parentNode.removeAttribute("disabled");
   };
 </script>
 
@@ -40,8 +46,12 @@
 
       {#each $rootStore.packs as pack}
         <li class="sticker-panel__list-item">
-          <button on:click={() => handleSelectPack(pack.name)}>
-            <img src={pack.images[0]} alt={pack.name} />
+          <button
+            disabled
+            class="sticker-panel__button-loading sticker-panel__button-loading--mini"
+            on:click={() => handleSelectPack(pack.name)}
+          >
+            <img on:load={handleImageLoad} src={pack.images[0]} alt={pack.name} />
           </button>
         </li>
       {/each}
@@ -50,10 +60,10 @@
     <div class="sticker-panel__pack">
       {#if $panelStore.selectedPack}
         <h4 class="sticker-panel__pack-name">{$panelStore.selectedPack}</h4>
-        <PackList images={selectedPack.images} />
+        <PackList {handleImageLoad} images={selectedPack.images} />
       {:else}
         <h4 class="sticker-panel__pack-name">Последнее использованное</h4>
-        <PackList images={$lastUsedStickersStore} />
+        <PackList {handleImageLoad} images={$lastUsedStickersStore} />
       {/if}
     </div>
   </div>
