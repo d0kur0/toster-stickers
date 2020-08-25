@@ -9,6 +9,7 @@
 
 ## Как установить
 [Toster Stickers in Chrome Store](https://chrome.google.com/webstore/detail/toster-stickers/biohplimnkjgemnkkhdbjenjkngnbpkp?hl=ru)
+
 Так же Вы можете установить его как unpacked extension:
 
 - Откройте страницу [Releases](https://github.com/d0kur0/toster-stickers/releases) и скачайте последний релиз.
