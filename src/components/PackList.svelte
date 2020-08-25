@@ -1,7 +1,9 @@
 <script>
   import { lastUsedStickersStore, panelStore, rootStore } from "../globalStores";
+  import { enableButtons } from "../utils/enableButtons";
 
   export let images = [];
+  export let handleImageLoad = () => {};
 
   const handleSelectSticker = image => {
     $rootStore.activeTextarea.value += `\n<img src="${image}" />\n`;
@@ -9,10 +11,7 @@
     panelStore.clearSelectPack();
     lastUsedStickersStore.add(image);
 
-    // fix toster bug, then submit button disabled before insert sticker
-    document
-      .querySelectorAll("button.btn.btn_outline_green")
-      .forEach(button => (button.disabled = false));
+    enableButtons();
   };
 </script>
 
@@ -20,8 +19,11 @@
   <ul class="sticker-panel__pack-list">
     {#each images as image}
       <li class="sticker-panel__pack-list-item">
-        <button on:click={() => handleSelectSticker(image)}>
-          <img src={image} alt="Sticker" />
+        <button
+          disabled
+          class="sticker-panel__button-loading"
+          on:click={() => handleSelectSticker(image)}>
+          <img on:load={handleImageLoad} src={image} alt="Sticker" loading="lazy" />
         </button>
       </li>
     {/each}
