@@ -1,0 +1,38 @@
+.paste-loading, .paste-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 800;
+  background-color: rgba(198, 204, 218, 0.7);
+  width: 100%;
+  height: 100%;
+}
+
+.paste-loading::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  border: 3px solid #494f6c;
+  border-left: 3px solid transparent;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  z-index: 51;
+  animation: rotation 0.8s infinite linear;
+}
+
+.paste-error {
+  background-color: rgba(255, 214, 214, 0.7);
+}
+
+.paste-error::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #c90f45;
+  content: "Ошибка загрузки изображения";
+  transform: translate(-50%, -50%);
+}

@@ -128,6 +128,56 @@
   object-fit: cover;
 }
 
+.sticker-panel__button-loading {
+  position: relative;
+}
+
+.sticker-panel__button-loading::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #3e4657;
+  border-radius: 5px;
+  z-index: 50;
+}
+
+.sticker-panel__button-loading::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border: 3px solid #888faa;
+  border-left: 3px solid transparent;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  z-index: 51;
+  animation: rotation 0.8s infinite linear;
+}
+
+.sticker-panel__button-loading--mini::before {
+  width: 14px;
+  height: 14px;
+}
+
+.sticker-panel__button-loading--mini::after {
+  background-color: #353b4b;
+}
+
+@keyframes rotation {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(359deg);
+  }
+}
+
 .sticker-panel ::-webkit-scrollbar {
   width: 5px;
 }
