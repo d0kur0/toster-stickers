@@ -28,7 +28,7 @@ injectButton();
 let observer = new MutationObserver(mutationRecords => {
   mutationRecords.forEach(record => {
     const isTextareaAdd = [...record.addedNodes].filter(
-      (node: HTMLElement) => node.className === "content-list__item",
+      (node: HTMLElement) => node.classList?.contains("answer-form") || node.classList?.contains("content-list__item"),
     );
 
     isTextareaAdd.length && injectButton();
