@@ -13,7 +13,7 @@
 
 - Откройте страницу [Releases](https://github.com/d0kur0/toster-stickers/releases) и скачайте последний релиз.
 - Распакуйте архив в любую папку.
-- Открой страницу [chrome://extension](chrome://extension)
+- Открой страницу [chrome://extensions](chrome://extensions)
 - В верхнем, левом углу есть кнопка Load Unpacked, нажмите её и выберите распакованную папку.
 
 ### Поддержка firefox
