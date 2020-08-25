@@ -8,8 +8,8 @@
 ![Image of Yaktocat](https://github.com/d0kur0/toster-stickers/blob/master/screenshots/ezgif-5-36bbbc88ebc8.gif?raw=true)
 
 ## Как установить
-На данный момент в Chrome Store нет расширения, оно находится на рассмотрении.
-Вы можете установить его как unpacked extension:
+[Toster Stickers in Chrome Store](https://chrome.google.com/webstore/detail/toster-stickers/biohplimnkjgemnkkhdbjenjkngnbpkp?hl=ru)
+Так же Вы можете установить его как unpacked extension:
 
 - Откройте страницу [Releases](https://github.com/d0kur0/toster-stickers/releases) и скачайте последний релиз.
 - Распакуйте архив в любую папку.
