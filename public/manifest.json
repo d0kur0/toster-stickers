@@ -1,9 +1,14 @@
 {
   "name": "Toster Stickers",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Extension for add sticker panel on toster.ru (qna.habr.ru)",
   "manifest_version": 2,
-  "permissions": ["storage"],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [],
   "web_accessible_resources": [
     "build/packs.json"
   ],
