@@ -1,104 +1,36 @@
-*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+ # Toster-Stickers
+Данное расширение для toster.ru (qna.habr.ru) добавляет в панель редактора новый элемент - панель стикеров. Которые можно использовать на сайте.
+Ведь все любят мемы, а некоторые вопросы так и просят отправить им ехидную картинку. Раньше при приходилось сперва загуглить нужный мем, а уже потом вставить его на сайте, но согласитесь - это не удобно.
 
----
+Так же дополнительной фичей является добавление поддержки вставки изображения прямо из буфера обмена в форму, что очень удобно и избавляет от надобности сперва сохранять скриншот на ПК, а потом грузить на сайт.
 
-# svelte app
+## Демо гифка
+![Image of Yaktocat](https://github.com/d0kur0/toster-stickers/blob/master/screenshots/ezgif-5-36bbbc88ebc8.gif?raw=true)
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+## Как установить
+На данный момент в Chrome Store нет расширения, оно находится на рассмотрении.
+Вы можете установить его как unpacked extension:
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+- Откройте страницу [Releases](https://github.com/d0kur0/toster-stickers/releases) и скачайте последний релиз.
+- Распакуйте архив в любую папку.
+- Открой страницу [chrome://extension](chrome://extension)
+- В верхнем, левом углу есть кнопка Load Unpacked, нажмите её и выберите распакованную папку.
 
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
+### Поддержка firefox
+Не тестировал, если у кого-то есть желание - можете попробовать и даже отправить pull request, если можете её сделать.
+Расширение использует всего одну функцию рантайма расширения, так что проблемы вряд ли будут.
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+## Добавить свой пак стикеров
+Вы можете или отправить мне pull request или форкнуть репозиторий и добавить только для себя.
+Чтобы добавить пак, нужно создать папку в ``stickerPacks/source``, имя которой будет равно имени пака стикеров.
+В эту папку добавляете нужные изображения а далее нужно собрать проект, это описано ниже.
 
+## Сборка проекта
+Расширение написано на Svelte, папка src - исходники, папка public - билд и само по себе расширение.
+Для сборки нужна Node.JS и npm, достаточно выполнить ``npm install`` в корне проекта, чтобы подтянуть все зависимости.
+Есть следующие скрипты:
+- ``npm run dev`` - билдит стикеры и запускает режим разработки с симуляцией панели тостера (не работает CTRL+V в формы, загрузка не пройдет)
+- ``npm run build`` - билдит стикеры и само расширение.
+- ``npm run build-stickers`` - смотрит новые паки стикеров, ресайзит их и перемещает в папку processed, так же собирает pack.json со списком стикеров для расширения.
 
-## Get started
-
-Install the dependencies...
-
-```bash
-cd svelte-app
-npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
-
-
-## Building and running in production mode
-
-To create an optimised version of the app:
-
-```bash
-npm run build
-```
-
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
-
-
-## Single-page app mode
-
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
-
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
-```
-
-## Using TypeScript
-
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
-
-```bash
-node scripts/setupTypeScript.js
-```
-
-Or remove the script via:
-
-```bash
-rm scripts/setupTypeScript.js
-```
-
-## Deploying to the web
-
-### With [Vercel](https://vercel.com)
-
-Install `vercel` if you haven't already:
-
-```bash
-npm install -g vercel
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
+Обратите внимание, что билд в режиме dev вызовет проблемы если его загрузить в хром, будет висеть долгая загрузка страницы из-за live-reload.
