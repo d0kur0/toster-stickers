@@ -7,6 +7,9 @@
 ## Демо гифка
 ![Image of Yaktocat](https://github.com/d0kur0/toster-stickers/blob/master/screenshots/ezgif-5-36bbbc88ebc8.gif?raw=true)
 
+## Баги
+Писал на коленке за 3 дня, если найдете баги - создавайте issue, подправлю.
+
 ## Как установить
 [Toster Stickers in Chrome Store](https://chrome.google.com/webstore/detail/toster-stickers/biohplimnkjgemnkkhdbjenjkngnbpkp?hl=ru)
 
