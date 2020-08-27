@@ -77,7 +77,7 @@ const allowedExtensions = [".jpg", ".jpeg", ".svg", ".png", ".webp"];
       .catch(console.error);
 
     if (!response) {
-      console.log(chalk.red("Error loading image, empty response"));
+      return console.log(chalk.red("Error loading image, empty response"));
     }
 
     packs = packs.map(pack => {
