@@ -6,7 +6,7 @@
     "url": "https://github.com/d0kur0/toster-stickers"
   },
   "scripts": {
-    "build-stickers": "tsc buildPacks.ts --outDir .tmp && node .tmp/buildPacks.js && del .tmp",
+    "build-stickers": "tsc buildPacks.ts --downlevelIteration true --outDir .tmp && node .tmp/buildPacks.js && del .tmp",
     "build": "npm run build-stickers && rollup -c",
     "dev": "npm run build-stickers && rollup -c -w",
     "start": "sirv public",
@@ -29,12 +29,14 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
+    "cli-progress": "^3.8.2",
+    "cloudinary": "^1.23.0",
     "del-cli": "^3.0.1",
+    "dotenv": "^8.2.0",
     "postcss": "^7.0.32",
     "postcss-import": "^12.0.1",
     "postcss-load-config": "^2.1.0",
     "prettier-plugin-svelte": "^1.1.0",
-    "sharp": "^0.25.4",
     "sirv-cli": "^1.0.0",
     "svelte-icons": "^2.1.0"
   }
