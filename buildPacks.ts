@@ -69,12 +69,16 @@ const allowedExtensions = [".jpg", ".jpeg", ".svg", ".png", ".webp"];
   });
 
   for await (const { folder, file } of filesList) {
-    const response = cloudinary.uploader
+    const response = await cloudinary.uploader
       .upload(path.join(stickerPacksPath, folder, file), {
         // Если не вырезать расширение файла cloudinary.url вернёт кривой url
         public_id: `${folder}/${file.split(".").slice(0, -1).join("")}`,
       })
-      .then(response => response, console.error);
+      .catch(console.error);
+
+    if (!response) {
+      console.log(chalk.red("Error loading image, empty response"));
+    }
 
     packs = packs.map(pack => {
       pack.name === folder &&
