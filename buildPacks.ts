@@ -71,12 +71,17 @@ const allowedExtensions = [".jpg", ".jpeg", ".svg", ".png", ".webp"];
 
   for await (const { folder, file } of filesList) {
     const response = await cloudinary.uploader.upload(path.join(stickerPacksPath, folder, file), {
-      public_id: `${folder}/${file}`,
+      // Если не вырезать расширение файла cloudinary.url вернёт кривой url
+      public_id: `${folder}/${file.split(".").slice(0, -1).join("")}`,
     });
 
     packs = packs.map(pack => {
       pack.name === folder &&
-        pack.images.push(cloudinary.url(response.public_id, { width: 250, crop: "fill" }));
+        pack.images.push(
+          cloudinary
+            .url(response.public_id, { width: 250, crop: "fill" })
+            .replace("http://", "https://"), // lol, и никакой настройки чтобы отдавался сразу http не нашёл
+        );
 
       return pack;
     });
@@ -95,4 +100,3 @@ const allowedExtensions = [".jpg", ".jpeg", ".svg", ".png", ".webp"];
   accessForBuildDir || (await fs.promises.mkdir(buildPath));
   await fs.promises.writeFile(path.join(buildPath, "packs.json"), JSON.stringify(packs), "utf-8");
 })();
-cloudinary.url("kionw7fu1erirw5upplj", { width: 250, crop: "fill" });
