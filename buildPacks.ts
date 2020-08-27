@@ -1,6 +1,5 @@
 import * as fs from "fs";
 import * as path from "path";
-import * as sharp from "sharp";
 import * as chalk from "chalk";
 import { StickersCollection, StickersCollectionItem } from "./src/types/stickersCollection";
 import { v2 as cloudinary } from "cloudinary";
