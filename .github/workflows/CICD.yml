@@ -17,7 +17,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: echo "CLOUDINARY_NAME=${{ secrets.CLOUDINARY_NAME }}\nCLOUDINARY_KEY=${{ secrets.CLOUDINARY_KEY }}\nCLOUDINARY_SECRET=${{ secrets.CLOUDINARY_SECRET }}" >> .env
-      - run: cat .env
+      - run: echo "CLOUDINARY_NAME=${{ secrets.CLOUDINARY_NAME }}" >> .env
+      - run: echo "CLOUDINARY_KEY=${{ secrets.CLOUDINARY_KEY }}" >> .env
+      - run: echo "CLOUDINARY_SECRET=${{ secrets.CLOUDINARY_SECRET }}" >> .env
       - run: yarn install
       - run: yarn build-stickers
